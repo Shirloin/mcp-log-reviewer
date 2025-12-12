@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  mcp-log-query:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcp-log-query
+    image: crpi-pnda4wyku982ifaa.ap-southeast-5.personal.cr.aliyuncs.com/shirloin/mcp-log-query:latest
+    environment:
+      - LOKI_URL=${LOKI_URL:-http://localhost:3100}
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
