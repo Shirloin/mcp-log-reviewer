@@ -8,7 +8,8 @@ services:
     container_name: mcp-log-query
     image: crpi-pnda4wyku982ifaa.ap-southeast-5.personal.cr.aliyuncs.com/shirloin/mcp-log-query:latest
     environment:
-      - LOKI_URL=${LOKI_URL:-http://localhost:3100}
+      - LOKI_URL=${LOKI_URL}
+      - SERVICE_NAME=${SERVICE_NAME}
     stdin_open: true
     tty: true
     restart: unless-stopped

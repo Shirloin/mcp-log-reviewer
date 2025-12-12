@@ -26,7 +26,8 @@ def log_query() -> str:
     end_time = datetime.now()
     start_time = end_time - timedelta(minutes=5)
     limit = 100
-    query = '{service="easy-buy-backend"}'
+    service_name = os.getenv("SERVICE_NAME")
+    query = f'{{service="{service_name}"}}'
     loki_url = os.getenv("LOKI_URL")
 
     # Query logs

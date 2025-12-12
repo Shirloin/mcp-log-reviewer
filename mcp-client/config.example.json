@@ -25,10 +25,13 @@
         "always",
         "-e",
         "LOKI_URL",
+        "-e",
+        "SERVICE_NAME",
         "${DOCKER_IMAGE}"
       ],
       "env": {
-        "LOKI_URL": "${LOKI_URL}"
+        "LOKI_URL": "${LOKI_URL}",
+        "SERVICE_NAME": "${SERVICE_NAME}"
       }
     }
   }
